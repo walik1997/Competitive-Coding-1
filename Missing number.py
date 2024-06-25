@@ -6,18 +6,16 @@ def search(a):
         return ("Invalid")
     if a[0]!=1:
         a.insert(0,1)
-        return a
+        return 1
     if a[len(a)-1]==len(a):
-        a.insert(len(a),a[len(a)-1]+1)
-        return a
+        return a[len(a)-1]+1
     else:
         low = 0
         high = len(a)-1
         while low<=high:
             mid = low+(high-low)//2
             if a[mid]==mid+1 and a[mid+1]==mid+3:
-                a.insert(mid+1,a[mid]+1)
-                return a
+                return a[mid]+1
             if mid+2==a[mid]:
                 high=mid-1
             else:
